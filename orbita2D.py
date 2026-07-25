@@ -8,7 +8,18 @@ def calcular_aceleracao(x, y):
     ax = ((-1) * a * x) / r
     ay = ((-1) * a * y) / r
     return ax, ay
-x_sat = Rt + 400000
-y_sat = 0
-ax, ay = calcular_aceleracao(x_sat, y_sat)
-print(ax, ay)
+xsat = Rt + 400000
+ysat = 0
+vx = 0
+vy = 7672
+dt = 1           
+tempo_total = 100
+tempo_atual = 0
+while tempo_atual < tempo_total:
+    ax, ay = calcular_aceleracao(xsat, ysat)
+    vx = vx + ax * dt
+    vy = vy + ay * dt
+    xsat = xsat + vx * dt
+    ysat = ysat + vy * dt
+    tempo_atual = tempo_atual + dt
+    print("posicao final X:", xsat, "Y:", ysat)
