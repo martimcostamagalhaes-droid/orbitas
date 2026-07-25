@@ -1,11 +1,1 @@
-import math
-G = 6.674 * 10 ** (-11)
-Mt = 5.972 * 10 ** 24
-Rt = 6371000
-h = 400000
-def velocidade_orbital(altura):
-    v = math.sqrt((G * Mt) / (Rt + h))
-    T = (2 * math.pi * (Rt + h)) / v
-    return T
-T = velocidade_orbital(h)
-print(T)
+
